@@ -1,161 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lamia's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Additional styles for layout */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #0077cc;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-
-        header p {
-            margin: 5px 0 15px;
-            font-size: 1.2rem;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1rem;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        section {
-            padding: 30px 20px;
-        }
-
-        #about {
-            background-color: #f9f9f9;
-            text-align: center;
-        }
-
-        #projects {
-            background-color: #fff;
-        }
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .project {
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s;
-        }
-
-        .project:hover {
-            transform: translateY(-5px);
-        }
-
-        .project h3 {
-            margin: 15px;
-            font-size: 1.2rem;
-        }
-
-        .project p {
-            margin: 15px;
-            font-size: 0.9rem;
-        }
-
-        #contact {
-            background-color: #f9f9f9;
-            text-align: center;
-        }
-
-        footer {
-            background-color: #0077cc;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-        }
-
-        .contact a {
-            color: #0077cc;
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 1rem;
-        }
-
-        .contact a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lamia's Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<header>
+  <header>
     <h1>Lamia's Portfolio</h1>
     <p>Frontend Developer | Web Developer | LMS Specialist</p>
     <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
     </nav>
-</header>
+  </header>
 
-<section id="about">
+  <section id="about">
     <h2>About Me</h2>
-    <p>Hello! I'm Lamia, a dedicated Frontend Developer with expertise in creating engaging and responsive web applications. With experience in tools like LearnDash, GrassBlade, and Articulate Rise, I specialize in delivering seamless user experiences and innovative e-learning solutions.</p>
-</section>
+    <p>Hello! I'm Lamia, a dedicated Frontend Developer and LMS Specialist. I build engaging and responsive web applications and interactive e-learning modules using tools like LearnDash, GrassBlade, and Articulate Rise.</p>
+  </section>
 
-<section id="projects">
+  <section id="projects">
     <h2>Projects</h2>
+    <h3>Frontend Development</h3>
     <div class="projects">
-        <div class="project">
-            <h3><a href="todo/todo.html" target="_blank">To-Do List Application</a></h3>
-            <p>A simple app to manage tasks with add, delete, and complete features.</p>
-        </div>
-        <div class="project">
-            <h3><a href="weather/weather.html" target="_blank">Weather App</a></h3>
-            <p>An application that fetches real-time weather data using the OpenWeather API.</p>
-        </div>
-        <div class="project">
-            <h3><a href="expense/expense.html" target="_blank">Expense Tracker</a></h3>
-            <p>Track your expenses and income with real-time balance calculation.</p>
-        </div>
+      <div class="project">
+        <h4><a href="todo/todo.html" target="_blank">To-Do List Application</a></h4>
+        <p>A simple app to manage tasks with add, delete, and complete features.</p>
+      </div>
+      <div class="project">
+        <h4><a href="weather/weather.html" target="_blank">Weather App</a></h4>
+        <p>An application that fetches real-time weather data using the OpenWeather API.</p>
+      </div>
+      <div class="project">
+        <h4><a href="expense/expense.html" target="_blank">Expense Tracker</a></h4>
+        <p>Track your expenses and income with real-time balance calculation.</p>
+      </div>
     </div>
-</section>
+    <h3>E-Learning Projects</h3>
+    <div class="projects">
+      <div class="project">
+        <h4>Articulate Rise</h4>
+        <ul>
+          <li><strong>Workplace Harassment:</strong> An interactive compliance training course built in Articulate Rise.</li>
+          <li><strong>Mastering Health Hive:</strong> A guide to the future of digital healthcare, developed with engaging visuals and quizzes.</li>
+        </ul>
+      </div>
+      <div class="project">
+        <h4>Microlearning</h4>
+        <ul>
+          <li><strong>How to Develop a Performance Improvement Plan:</strong> A concise microlearning module focusing on effective performance management strategies.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-<section id="contact">
+  <section id="contact">
     <h2>Contact Me</h2>
     <p>If you'd like to collaborate or learn more about my work, feel free to reach out!</p>
     <div class="contact">
-        <a href="mailto:example@domain.com">Email</a>
-        <a href="https://github.com/username" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/username" target="_blank">LinkedIn</a>
+      <a href="mailto:example@domain.com">Email</a>
+      <a href="https://github.com/username" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/username" target="_blank">LinkedIn</a>
     </div>
-</section>
+  </section>
 
-<footer>
+  <footer>
     <p>&copy; 2025 Lamia's Portfolio. All rights reserved.</p>
-</footer>
-
+  </footer>
 </body>
 </html>
