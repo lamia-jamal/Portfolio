@@ -1,74 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lamia's Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
-  <header>
-    <h1>Lamia's Portfolio</h1>
-    <p>Frontend Developer | Web Developer | LMS Specialist</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
 
-  <section id="about">
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Lamia Jamal</h1>
+    <p>Frontend Developer | Web Developer | LMS Specialist</p>
+  </section>
+
+  <!-- About -->
+  <section class="about">
     <h2>About Me</h2>
     <p>Hello! I'm Lamia, a dedicated Frontend Developer and LMS Specialist. I build engaging and responsive web applications and interactive e-learning modules using tools like LearnDash, GrassBlade, and Articulate Rise.</p>
   </section>
 
-  <section id="projects">
+  <!-- Projects -->
+  <section class="projects">
     <h2>Projects</h2>
+
     <h3>Frontend Development</h3>
-    <div class="projects">
-      <div class="project">
-        <h4><a href="todo/todo.html" target="_blank">To-Do List Application</a></h4>
-        <p>A simple app to manage tasks with add, delete, and complete features.</p>
+    <div class="project-grid">
+      <div class="project-card">
+        <h4>To-Do List Application</h4>
+        <p>Manage tasks with add, delete, and complete features.</p>
+        <a href="todo/todo.html" target="_blank">View Project</a>
       </div>
-      <div class="project">
-        <h4><a href="weather/weather.html" target="_blank">Weather App</a></h4>
-        <p>An application that fetches real-time weather data using the OpenWeather API.</p>
+      <div class="project-card">
+        <h4>Weather App</h4>
+        <p>Real-time weather data using the OpenWeather API.</p>
+        <a href="weather/weather.html" target="_blank">View Project</a>
       </div>
-      <div class="project">
-        <h4><a href="expense/expense.html" target="_blank">Expense Tracker</a></h4>
+      <div class="project-card">
+        <h4>Expense Tracker</h4>
         <p>Track your expenses and income with real-time balance calculation.</p>
+        <a href="expense/expense.html" target="_blank">View Project</a>
       </div>
     </div>
+
     <h3>E-Learning Projects</h3>
-    <div class="projects">
-      <div class="project">
-        <h4>Articulate Rise</h4>
-        <ul>
-          <li><a href="workplace-harassment/index.html" target="_blank"><strong>Workplace Harassment:</strong></a> An interactive compliance training course built in Articulate Rise.</li>
-          <li><a href="mastering-health-hive/index.html" target="_blank"><strong>Mastering Health Hive:</strong></a> A guide to the future of digital healthcare, developed with engaging visuals and quizzes.</li>
-        </ul>
+    <div class="project-grid">
+      <div class="project-card">
+        <h4>Workplace Harassment</h4>
+        <p>Interactive compliance training course built in Articulate Rise.</p>
+        <a href="workplace-harassment/index.html" target="_blank">View Project</a>
       </div>
-      <div class="project">
-        <h4>Microlearning</h4>
-        <ul>
-          <li><a href="performance-improvement-plan/index.html" target="_blank"><strong>How to Develop a Performance Improvement Plan:</strong></a> A concise microlearning module focusing on effective performance management strategies.</li>
-        </ul>
+      <div class="project-card">
+        <h4>Mastering Health Hive</h4>
+        <p>A guide to the future of digital healthcare, developed with engaging visuals and quizzes.</p>
+        <a href="mastering-health-hive/index.html" target="_blank">View Project</a>
+      </div>
+      <div class="project-card">
+        <h4>Performance Improvement Plan</h4>
+        <p>Microlearning module on effective performance management strategies.</p>
+        <a href="performance-improvement-plan/index.html" target="_blank">View Project</a>
       </div>
     </div>
   </section>
 
-  <section id="contact">
+  <!-- Blog -->
+  <section class="blog">
+    <h2>Blog</h2>
+    <p>Coming soon: I’ll share posts about web development and e-learning best practices.</p>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact">
     <h2>Contact Me</h2>
     <p>If you'd like to collaborate or learn more about my work, feel free to reach out!</p>
-    <div class="contact">
-      <a href="mailto:example@domain.com">Email</a>
-      <a href="https://github.com/username" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/username" target="_blank">LinkedIn</a>
+    <div class="icons">
+      <a href="mailto:example@domain.com"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://github.com/username" target="_blank"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/username" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Lamia's Portfolio. All rights reserved.</p>
+    &copy; 2025 Lamia Jamal — All rights reserved.
   </footer>
+
 </body>
 </html>
