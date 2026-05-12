@@ -1,90 +1,332 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lamia's Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-</head>
-<body>
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <!-- Hero -->
-  <section class="hero">
-    <h1>Lamia Jamal</h1>
-    <p>Frontend Developer | Web Developer | LMS Specialist</p>
-  </section>
+html {
+  scroll-behavior: smooth;
+}
 
-  <!-- About -->
-  <section class="about">
-    <h2>About Me</h2>
-    <p>Hello! I'm Lamia, a dedicated Frontend Developer and LMS Specialist. I build engaging and responsive web applications and interactive e-learning modules using tools like LearnDash, GrassBlade, and Articulate Rise.</p>
-  </section>
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
 
-  <!-- Projects -->
-  <section class="projects">
-    <h2>Projects</h2>
+/* ---- NEW: Navigation Bar ---- */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: transparent;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  padding: 1.2rem 0;
+}
 
-    <h3>Frontend Development</h3>
-    <div class="project-grid">
-      <div class="project-card">
-        <h4>To-Do List Application</h4>
-        <p>Manage tasks with add, delete, and complete features.</p>
-        <a href="todo/todo.html" target="_blank">View Project</a>
-      </div>
-      <div class="project-card">
-        <h4>Weather App</h4>
-        <p>Real-time weather data using the OpenWeather API.</p>
-        <a href="weather/weather.html" target="_blank">View Project</a>
-      </div>
-      <div class="project-card">
-        <h4>Expense Tracker</h4>
-        <p>Track your expenses and income with real-time balance calculation.</p>
-        <a href="expense/expense.html" target="_blank">View Project</a>
-      </div>
-    </div>
+#navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  padding: 0.8rem 0;
+}
 
-    <h3>E-Learning Projects</h3>
-    <div class="project-grid">
-      <div class="project-card">
-        <h4>Workplace Harassment</h4>
-        <p>Interactive compliance training course built in Articulate Rise.</p>
-        <a href="workplace-harassment/index.html" target="_blank">View Project</a>
-      </div>
-      <div class="project-card">
-        <h4>Mastering Health Hive</h4>
-        <p>A guide to the future of digital healthcare, developed with engaging visuals and quizzes.</p>
-        <a href="mastering-health-hive/index.html" target="_blank">View Project</a>
-      </div>
-      <div class="project-card">
-        <h4>Performance Improvement Plan</h4>
-        <p>Microlearning module on effective performance management strategies.</p>
-        <a href="performance-improvement-plan/index.html" target="_blank">View Project</a>
-      </div>
-    </div>
-  </section>
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  <!-- Blog -->
-  <section class="blog">
-    <h2>Blog</h2>
-    <p>Coming soon: I’ll share posts about web development and e-learning best practices.</p>
-  </section>
+.nav-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
 
-  <!-- Contact -->
-  <section class="contact">
-    <h2>Contact Me</h2>
-    <p>If you'd like to collaborate or learn more about my work, feel free to reach out!</p>
-    <div class="icons">
-      <a href="mailto:lamiajamal93@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-      <a href="https://github.com/lamia-jamal" target="_blank"><i class="fa-brands fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/lamia-jamal-183754127/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-    </div>
-  </section>
+#navbar.scrolled .nav-logo,
+#navbar.scrolled .nav-link {
+  color: #333;
+}
 
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 Lamia Jamal — All rights reserved.
-  </footer>
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
 
-</body>
-</html>
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover {
+  border-bottom: 2px solid #fff;
+}
+
+#navbar.scrolled .nav-link:hover {
+  border-bottom: 2px solid #0077cc;
+}
+
+/* ---- Hero Section ---- */
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, #0077cc, #00a8a8);
+  color: #fff;
+  padding: 160px 20px 120px;
+  text-align: center;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#particle-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: fadeInDown 1s ease;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  font-size: 1.4rem;
+  margin-bottom: 2.5rem;
+  animation: fadeInUp 1s ease;
+  opacity: 0.9;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #fff;
+  color: #0077cc;
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 1.5s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* ---- Sections ---- */
+section {
+  padding: 80px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+section h2 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60%;
+  height: 3px;
+  background-color: #0077cc;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+section h3 {
+  margin-top: 50px;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+  color: #005a8b;
+}
+
+.about p,
+.blog p,
+.contact p {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+/* ---- Projects Grid ---- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 25px;
+}
+
+.project-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  padding: 30px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border-color: #0077cc;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #0077cc, #00a8a8);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+  transform-origin: bottom;
+}
+
+.project-card:hover::before {
+  transform: scaleY(1);
+}
+
+.project-card h4 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.project-card p {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.project-card a {
+  text-decoration: none;
+  color: #0077cc;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: gap 0.3s ease;
+}
+
+.project-card a:hover {
+  gap: 10px;
+  text-decoration: none;
+}
+
+.project-card a i {
+  font-size: 0.9rem;
+}
+
+/* ---- NEW: Reveal on Scroll Animation ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Contact Icons ---- */
+.icons {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.icons a {
+  margin: 0 15px;
+  font-size: 2.2rem;
+  color: #0077cc;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.icons a:hover {
+  color: #005a8b;
+  transform: translateY(-5px);
+}
+
+/* ---- Footer ---- */
+footer {
+  background: linear-gradient(135deg, #0077cc, #00a8a8);
+  color: #fff;
+  text-align: center;
+  padding: 25px;
+  margin-top: 40px;
+}
+
+/* ---- Keyframe Animations ---- */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ---- Responsive Design ---- */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+  .nav-menu {
+    gap: 1rem;
+  }
+}
