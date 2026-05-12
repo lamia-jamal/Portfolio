@@ -1,0 +1,332 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/* ---- NEW: Navigation Bar ---- */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: transparent;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  padding: 1.2rem 0;
+}
+
+#navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  padding: 0.8rem 0;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#navbar.scrolled .nav-logo,
+#navbar.scrolled .nav-link {
+  color: #333;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover {
+  border-bottom: 2px solid #fff;
+}
+
+#navbar.scrolled .nav-link:hover {
+  border-bottom: 2px solid #0077cc;
+}
+
+/* ---- Hero Section ---- */
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, #0077cc, #00a8a8);
+  color: #fff;
+  padding: 160px 20px 120px;
+  text-align: center;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#particle-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: fadeInDown 1s ease;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  font-size: 1.4rem;
+  margin-bottom: 2.5rem;
+  animation: fadeInUp 1s ease;
+  opacity: 0.9;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #fff;
+  color: #0077cc;
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 1.5s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* ---- Sections ---- */
+section {
+  padding: 80px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+section h2 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60%;
+  height: 3px;
+  background-color: #0077cc;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+section h3 {
+  margin-top: 50px;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+  color: #005a8b;
+}
+
+.about p,
+.blog p,
+.contact p {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+/* ---- Projects Grid ---- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 25px;
+}
+
+.project-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  padding: 30px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border-color: #0077cc;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #0077cc, #00a8a8);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+  transform-origin: bottom;
+}
+
+.project-card:hover::before {
+  transform: scaleY(1);
+}
+
+.project-card h4 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.project-card p {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.project-card a {
+  text-decoration: none;
+  color: #0077cc;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: gap 0.3s ease;
+}
+
+.project-card a:hover {
+  gap: 10px;
+  text-decoration: none;
+}
+
+.project-card a i {
+  font-size: 0.9rem;
+}
+
+/* ---- NEW: Reveal on Scroll Animation ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Contact Icons ---- */
+.icons {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.icons a {
+  margin: 0 15px;
+  font-size: 2.2rem;
+  color: #0077cc;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.icons a:hover {
+  color: #005a8b;
+  transform: translateY(-5px);
+}
+
+/* ---- Footer ---- */
+footer {
+  background: linear-gradient(135deg, #0077cc, #00a8a8);
+  color: #fff;
+  text-align: center;
+  padding: 25px;
+  margin-top: 40px;
+}
+
+/* ---- Keyframe Animations ---- */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ---- Responsive Design ---- */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+  .nav-menu {
+    gap: 1rem;
+  }
+}
