@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How I Solved a LearnDash Course Completion Issue</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <section class="blog-post">
+        <div class="container">
+
+            <a href="../index.html#blog" class="back-link">← Back to Blog</a>
+
+            <h1>How I Solved a LearnDash Course Completion Issue Caused by Caching</h1>
+
+            <p class="blog-date">May 2026 · 4 min read</p>
+
+            <p>
+                One of the most challenging LMS issues I worked on involved course completion tracking suddenly failing for users in a LearnDash-based learning platform.
+            </p>
+
+            <p>
+                At first, the issue appeared random. Learners were completing modules, but their progress was not updating correctly. Since the platform relied heavily on microlearning content and SCORM/xAPI tracking through GrassBlade xAPI Companion, this became a serious usability issue.
+            </p>
+
+            <p>
+                After investigating the affected courses, I discovered that the issue was related to caching at the hosting level. Cached data was preventing completion records from updating properly in real time.
+            </p>
+
+            <h2>Steps I Took</h2>
+
+            <ul>
+                <li>Reviewed the affected lesson and course setup</li>
+                <li>Verified GrassBlade xAPI activity tracking</li>
+                <li>Tested user progress updates</li>
+                <li>Compared working and non-working modules</li>
+                <li>Cleared the platform cache through WP Engine</li>
+            </ul>
+
+            <p>
+                Once the cache was cleared, course completion tracking immediately started functioning correctly again.
+            </p>
+
+            <p>
+                This experience taught me the importance of understanding how LMS systems, plugins, and hosting infrastructure interact together.
+            </p>
+
+        </div>
+    </section>
+
+</body>
+</html>
